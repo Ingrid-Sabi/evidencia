@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div id ="nav-bar">
+        <ul>
+            <li><a href="index.html"> Inicio</a></li>
+            <li><a href="eje1.html"> Ejercicio 1</a></li>
+            <li> <a href="eje2.html"> Ejercicio 2</a></li>
+            <li> <a href="eje3.html"> Ejercicio 3</a></li>
+            <li><a href="eje4.html"> Ejercicio 4</a></li>
+            
+        </ul>
+         </div>
+    <section>
+    <form action="#" method="POST">
+        <tr>
+            <td colspan="2">EJERCICIO 2</td>
+        </tr> <br> <br>
+       <input type="number" id="sueldo" placeholder="digite su sueldo"  required class="cajas"> <br> <br>
+          <button type="button" onclick="calcular();"class="boton">calcular</button><br>
+
+          <div id="total"></div>
+          <div id="pago"></div>
+  </form><br>
+</section>
+  
+      
+</body>
+</html>
+<script>
+    function calcular(){
+        var sueldo =document.getElementById('sueldo').value;
+      
+        if(sueldo > 1000000){
+        var resultado=parseInt(sueldo)* 0.05;
+        var total=resultado +  parseInt(sueldo);
+        document.getElementById('total').innerHTML="<h1> Se le hizo un Aumento del 5%, su sueldo es de= "+total+"</h1>";
+           }
+           if(sueldo < 800000){
+        var resul=parseInt(sueldo)* 0.10;
+        var pago=  parseInt(sueldo)+ resul;
+        document.getElementById('pago').innerHTML="<h1> Se le hizo un Aumento del 10%, su sueldo es de= "+pago+"</h1>";             
+         }    
+    }
+</script>

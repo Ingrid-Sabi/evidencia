@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div id ="nav-bar">
+        <ul>
+            <li><a href="index.html"> Inicio</a></li>
+            <li><a href="eje1.html"> Ejercicio 1</a></li>
+            <li> <a href="eje2.html"> Ejercicio 2</a></li>
+            <li> <a href="eje3.html"> Ejercicio 3</a></li>
+            <li><a href="eje4.html"> Ejercicio 4</a></li>
+            
+        </ul>
+         </div>
+    <section>
+    <form action="#" method="POST">
+        <tr>
+            <td colspan="2">EJERCICIO 1</td>
+        </tr> <br> <br>
+       <input type="number" id="horas" placeholder="Horas trabajadas" required class="cajas"> <br> <br>
+          <button type="button" onclick="calcular();"class="boton">calcular</button><br>
+
+          <div id="resultado"></div>
+          <div id="total"></div>
+  </form><br>
+</section>
+  
+       
+</body>
+</html>
+<script>
+    function calcular(){
+        var horas =document.getElementById('horas').value;
+      
+        if(horas <=40){
+        var resultado=parseInt(horas) * 10000;
+        document.getElementById('resultado').innerHTML="<h1> Su pago es de = "+resultado+"</h1>";
+           }
+         if(horas > 40) {
+            var resul=  40 * 10000;
+            var extras=  parseInt(horas) - 40 ;
+            var valor_total=extras * 15000;
+            var total = resul + valor_total
+           
+            document.getElementById('total').innerHTML="<h1> Su pago es de = "+total+"</h1>";  
+         }    
+    }
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ejercicio 3</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div id ="nav-bar">
+        <ul>
+            <li><a href="index.html"> Inicio</a></li>
+            <li><a href="eje1.html"> Ejercicio 1</a></li>
+            <li> <a href="eje2.html"> Ejercicio 2</a></li>
+            <li> <a href="eje3.html"> Ejercicio 3</a></li>
+            <li><a href="eje4.html"> Ejercicio 4</a></li>
+            
+        </ul>
+         </div>
+    <section>
+    <form action="#" method="POST">
+        <tr>
+            <td colspan="2">EJERCICIO 3</td>
+        </tr> <br> <br>
+       <input type="number" id="n1" placeholder="N. primer parcial" required class="cajas"> <br>
+       <input type="number" id="n2" placeholder="N. segundo parcial" required class="cajas"> <br>
+       <input type="number" id="n3" placeholder="N. tercer parcial" required class="cajas"> <br>
+       <input type="number" id="n4" placeholder="N. examen final" required class="cajas"> <br> <br>
+          <button type="button" onclick="calcular();"class="boton">calcular</button><br>
+
+          <div id="gano"></div>
+          <div id="perdio"></div>
+          <div id="transicion"></div>
+  </form>
+</section>
+
+ 
+   
+</body>
+</html>
+<script>
+    function calcular(){
+        var n1 =document.getElementById('n1').value;
+        var n2 =document.getElementById('n2').value;
+        var n3 =document.getElementById('n3').value;
+        var n4 =document.getElementById('n4').value;
+       
+        var r1=parseInt(n1) * 0.20;
+        var r2=parseInt(n2) * 0.25;
+        var r3=parseInt(n3) * 0.30;
+        var r4=parseInt(n4) * 0.25;
+
+        var nota_definitiva = (r1 + r2 + r3 + r4 );
+
+
+      if(nota_definitiva >= 3 ){
+        document.getElementById('gano').innerHTML="<h1> Gano la materia de programacion= "+nota_definitiva+"</h1>";
+
+      }
+      if( 2.5 < nota_definitiva   && nota_definitiva < 3){
+        document.getElementById('perdio').innerHTML="<h1> Perdio la materia de programacion= "+nota_definitiva+"</h1>";
+      }
+      if(nota_definitiva <= 2.4){
+        document.getElementById('transicion').innerHTML="<h1> Quedo en transicion= "+nota_definitiva+"</h1>";
+      }           
+    }
+</script>
